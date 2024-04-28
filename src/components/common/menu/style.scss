@@ -1,0 +1,245 @@
+.menu-container {
+    > .overlay {
+      position: absolute;
+      right: 0;
+      height: calc( 100vh - 120px );
+      width: calc( 100vw - 120px );
+      background: #fafafa;
+    }
+  
+    &.active > .overlay {
+      position: absolute;
+      right: 0;
+      height: calc( 100vh - 120px );
+      width: calc( 100vw - 120px );
+      background: #fafafa;
+      animation: overlay-slide-in 300ms forwards 300ms;
+      
+    }
+  
+    > .overlay {
+      animation: overlay-slide-out 300ms forwards;
+    }
+  
+    display: flex;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background: #202934;
+    border: 60px solid #181d23;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    z-index: -1;
+    opacity:0;
+  
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      min-height: 100vh;
+      z-index: -1;
+    }
+  
+    &::before {
+      //background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Stars.svg?sanitize=true);
+    }
+  
+    &::after {
+      //background: url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Trees.svg?sanitize=true) bottom repeat-x;
+    }
+  
+    &.deactive {
+      animation: fade-out 600ms forwards;
+    }
+  
+    &.active {
+      animation: fade-in 300ms forwards;
+    }
+  
+    ul, .social {
+      margin-left: -80px;
+      opacity: 0;
+      animation: slide-out 200ms forwards;
+    }
+  
+    ul {
+      list-style-type: none !important;
+      font-size: 3rem;
+    }
+  
+    &.active {
+      ul, .social {
+        animation: slide-in 300ms forwards 600ms;
+      }
+    }
+  
+    ul li {
+      border-left: .2rem solid transparent;
+      transition: border-left 200ms;
+  
+      a {
+        font-size: 3rem;
+        padding-left: .5rem;
+  
+        &::after {
+          content: ' »';
+          font-size: 2.5rem;
+          color: transparent;
+          transition: color 200ms;
+        }
+  
+        &:hover::after {
+          content: ' »';
+          color: #f300b4;
+        }
+      }
+    }
+  }
+  
+  @keyframes overlay-slide-in {
+    from {
+      width: calc( 100vw - 120px );
+    }
+  
+    to {
+      width: 0;
+    }
+  }
+  
+  @keyframes overlay-slide-out {
+    from {
+      left: 0;
+      width: 0;
+    }
+  
+    to {
+      left: 0;
+      width: calc( 100vw - 120px );
+    }
+  }
+  
+  /***** Menu Layer *****/
+  
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+      z-index: 999;
+    }
+  
+    50% {
+      opacity: 1;
+      z-index: 999;
+    }
+  
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      z-index: -1;
+    }
+  
+    to {
+      opacity: 1;
+      z-index: 999;
+    }
+  }
+  
+  /***** Menu Items: Animation *****/
+  
+  @keyframes slide-out {
+    from {
+      opacity: 1;
+      margin-left: 0px;
+    }
+  
+    to {
+      opacity: 0;
+      margin-left: -80px;
+    }
+  }
+  
+  @keyframes slide-in {
+    from {
+      opacity: 0;
+      margin-left: -80px;
+    }
+  
+    to {
+      opacity: 1;
+      margin-left: 0;
+    }
+  }
+  
+  /***** Menu Items: Hover Animation *****/
+  
+  .social {
+    padding: 1rem 0 0 .5rem;
+  
+    a {
+      font-size: 1.5rem;
+      padding: .2rem;
+    }
+  }
+  
+  .menu-container a {
+    color: #fafafa;
+  
+    &:visited {
+      color: #fafafa;
+    }
+  
+    &:hover, &:active {
+      color: #f300b4;
+    }
+  }
+  
+  @media only screen and (max-width: 649px) {
+    .menu-container {
+      border: none;
+  
+      > .overlay {
+        height: 100vh;
+        width: 100vw;
+      }
+  
+      &.active > .overlay {
+        height: 100vh;
+        width: 100vw;
+        animation: overlay-slide-in 300ms forwards 300ms;
+      }
+  
+      > .overlay {
+        animation: overlay-slide-out 300ms forwards;
+      }
+    }
+  
+    @keyframes overlay-slide-in {
+      from {
+        width: 100vw;
+      }
+  
+      to {
+        width: 0;
+      }
+    }
+  
+    @keyframes overlay-slide-out {
+      from {
+        left: 0;
+        width: 0;
+      }
+  
+      to {
+        left: 0;
+        width: 100vw;
+      }
+    }
+  }
+  

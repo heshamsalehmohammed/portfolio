@@ -1,0 +1,104 @@
+#about {
+    height: 100%;
+    min-height: 100vh;
+    font-size: 1.4rem;
+    position: relative;
+    background: #fafafa;
+    clip-path: polygon(0 0, 20% 5%, 100% 0, 100% 100%, 80% 95%, 0 100%);
+    z-index: 5;
+    background: #202736;
+    background-attachment: fixed;
+    background-size: cover;
+    .footer {
+        .active {
+            &::after {
+                content: ' »';
+            }
+        }
+    }
+    .wrapper {
+        padding: 5rem 10rem 12rem;
+        height: 100%;
+        min-height: 100vh;
+        max-width: 1400px;
+        margin: 0 auto;
+        margin-top: 150px;
+    }
+    article {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 1rem;
+        padding: 3rem 0;
+    }
+    .title {
+        grid-column-end: span 4;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h3 {
+            font-weight: bold;
+            font-size: xx-large;
+            color: #fff;
+            text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, .1), 0 0 5px rgba(0, 0, 0, .1), 0 1px 3px rgba(0, 0, 0, .3), 0 3px 5px rgba(0, 0, 0, .2), 0 5px 10px rgba(0, 0, 0, .25), 0 10px 10px rgba(0, 0, 0, .2), 0 20px 20px rgba(0, 0, 0, .15);
+        }
+    }
+    .separator {
+        background: #f300b4;
+        width: 150px;
+        height: 2px;
+        margin: 1rem 0;
+        padding: 0;
+    }
+    .subtitle {
+        font-size: 1.6rem;
+        text-align: center;
+        color: inherit;
+        padding-bottom: 1.5rem;
+    }
+    p {
+        padding-bottom: 1.5rem;
+        color: #555;
+        line-height: 1.9rem;
+    }
+    .desc {
+        &.full {
+            grid-column-end: span 2;
+            margin-bottom: 2rem;
+            grid-column-start: 2;
+        }
+        grid-column-end: span 2;
+        background: #ffffffaa;
+        padding: 2rem;
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 1149px) {
+    #about {
+        article {
+            grid-template-columns: 1fr;
+            grid-gap: 0;
+        }
+        .desc {
+            &.full {
+                grid-column-end: -1;
+                grid-column-start: 1;
+            }
+            grid-column-end: -1;
+        }
+    }
+}
+
+@media only screen and (max-width: 949px) {
+    #about {
+        clip-path: polygon(0 0, 20% 2%, 100% 0, 100% 100%, 80% 98%, 0 100%);
+        background-position: top left;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 649px) {
+    #about .wrapper {
+        padding: 10rem 2rem 8rem;
+    }
+}

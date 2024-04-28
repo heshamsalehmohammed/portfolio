@@ -1,0 +1,25 @@
+svg {
+    max-width: 100%;
+}
+
+
+$polylion-height: 800px;
+
+svg polygon {
+    opacity: 0;
+
+    .no-js & {
+        opacity: 1;
+    }
+}
+
+.polylion {
+    height: $polylion-height;
+
+    >polygon {
+        .no-cssanimations & {
+            transform: scale(1);
+            opacity  : 1;
+        }
+    }
+}

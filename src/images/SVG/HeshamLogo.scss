@@ -1,0 +1,41 @@
+#HeshamLogo {
+  position: absolute;
+  top: 25%;
+  right: 0;
+  width: 50%;
+  animation-name: float;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  margin-right: 10%;
+  .drawit {
+    fill: transparent;
+    stroke: #000;
+    stroke-width: 35px;
+    stroke-dasharray: 3000;
+    stroke-dashoffset: -500;
+    animation: dash 5s linear 0s infinite;
+  }
+  .jobing-j {
+    stroke: #fe416c;
+   /*  fill: #f5f7f7; */
+  }
+}
+
+/* Keyframes */
+@keyframes dash {
+    0% {
+      stroke-dashoffset: -500;
+    }
+    30% {
+      stroke-dashoffset: 0;
+    }
+    60% {
+      stroke-dashoffset: 0;
+    }
+    100% {
+      stroke-dashoffset: -500;
+    }
+  
+  }

@@ -1,0 +1,53 @@
+body {
+  height     : 100%;
+  color      : #252934;
+  background : #fafafa;
+  font-size  : 62.5%;
+  font-family: 'Overlock', Arial, Helvetica, sans-serif;
+  overflow-x : hidden;
+}
+
+a {
+  color          : #252934;
+  //font-size      : 1.4rem;
+  text-decoration: none !important;
+  transition     : 200ms;
+
+  &:visited {
+    color          : #252934;
+    font-size      : 1.4rem;
+    text-decoration: none;
+    transition     : 200ms;
+  }
+
+  &:hover,
+  &:active {
+    color: #f300b4;
+  }
+}
+
+.footer {
+  button {
+    background: #ff416c;
+    color     : #fafafa;
+    margin-top: 1rem;
+    width     : auto;
+
+  }
+
+  a {
+    &::after {
+      content   : '»';
+      color     : transparent;
+      transition: color 200ms;
+    }
+
+    &:hover::after {
+      content: '»';
+      color  : #f300b4;
+    }
+    &:hover {
+      color  : #f300b4;
+    }
+  }
+}

@@ -1,0 +1,206 @@
+#welcome-section {
+    background: #202736;
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    min-height: 100vh;
+    margin: 0 auto;
+    z-index: 1;
+    &::before {
+        content: '';
+        position: fixed;
+        //background           : url("../../../images/6.jpg") no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+        width: 100%;
+        min-height: 100vh;
+        z-index: -1;
+        opacity: 0;
+        animation: stars-move-in 1000ms 300ms forwards;
+    }
+}
+
+@keyframes stars-move-in {
+    from {
+        background-position-y: -100px;
+    }
+    to {
+        opacity: 1;
+        background-position-y: 0;
+    }
+}
+
+.forest {
+    position: absolute;
+    bottom: -37% !important;
+    left: 0;
+    background: url("../../../images/2.jpg") center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 470px;
+    opacity: 0;
+    animation: forest-move-in 1000ms 500ms forwards;
+    border-bottom: 1px solid #181d23;
+    clip-path: polygon(0 0, 20% 7%, 100% 0, 100% 100%, 80% 98%, 0 100%);
+    background-attachment: fixed;
+}
+
+@keyframes forest-move-in {
+    from {
+        background-position-y: 150%;
+    }
+    to {
+        opacity: 1;
+        background-position-y: 100%;
+    }
+}
+
+.moon {
+    position: absolute;
+    /*   top                  : 0;
+  right                     : 0; */
+    position: fixed;
+    /*   background           : url(https://raw.githubusercontent.com/yagoestevez/fcc-portfolio/master/src/Images/Moon.svg?sanitize=true) right 150% no-repeat;
+ */
+    background-size: 40% 40%;
+    background-attachment: fixed;
+    width: 100%;
+    /*  height                : 100%;*/
+    z-index: -1;
+    opacity: 0;
+    animation: moon-move-in 1.2s 1s forwards;
+}
+
+@keyframes moon-move-in {
+    from {
+        opacity: 0;
+        background-position: right 150%;
+    }
+    to {
+        opacity: 1;
+        background-position: top right;
+    }
+}
+
+
+/* Copy and CTA */
+
+#welcome-section .container {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    opacity: 0;
+    transform: translate(-20%, -50%);
+    animation: text-fade-in 1000ms 800ms forwards;
+    left: 14vw;
+    h1 {
+        font-size: 4rem;
+        font-weight: normal;
+        font-style: italic;
+        color: #fafafa;
+        line-height: 3rem;
+        .line {
+            &:first-child {
+                margin-left: 1rem;
+            }
+            &:last-child {
+                margin-left: 2rem;
+            }
+        }
+    }
+    .buttons {
+        display: flex;
+        margin-top: 1rem;
+        a {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #fafafa;
+            color: #fafafa;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 1rem;
+            &:visited {
+                width: 100%;
+                padding: 1rem;
+                border: 1px solid #fafafa;
+                color: #fafafa;
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 1rem;
+            }
+            &:hover,
+            &:active {
+                border: 1px solid #ff416c;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 100px -20px #ff416c;
+            }
+            &.cta {
+                background: #ff416c;
+                border: 1px solid transparent;
+                color: #fafafa;
+                font-weight: bold;
+                &:visited {
+                    background: #ff416c;
+                    border: 1px solid transparent;
+                    color: #fafafa;
+                    font-weight: bold;
+                }
+                &:hover,
+                &:active {
+                    background: transparent;
+                    border: 1px solid #ff416c;
+                }
+            }
+            &:first-child {
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+@keyframes text-fade-in {
+    from {
+        right: 0;
+    }
+    to {
+        opacity: 1;
+        right: 25%;
+    }
+}
+
+.line {
+    display: block;
+}
+
+.color {
+    color: #ff416c;
+    font-style: italic;
+}
+
+@media only screen and (max-width: 649px) {
+    #HeshamLogo {
+        top: 20% !important;
+    }
+    #welcome-section .container {
+        top: 30%;
+        left: -40%;
+        width: 80%;
+        transform: translate(50%, 0);
+        animation: text-fade-in 1000ms 800ms forwards;
+        h1{
+            font-size: 3rem;
+        }
+    }
+    @keyframes text-fade-in {
+        from {
+            right: 0;
+        }
+        to {
+            opacity: 1;
+            right: 50%;
+        }
+    }
+    .silhouette {
+        width: 100%;
+    }
+}
